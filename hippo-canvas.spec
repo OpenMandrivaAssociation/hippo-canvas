@@ -6,7 +6,7 @@
 
 Name:           %name
 Version:        0.3.0
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        A canvas widget
 
 Group:          Graphical desktop/GNOME
@@ -44,7 +44,7 @@ developing applications that use hippo-canvas.
 %package -n     python-%name
 Summary:        Python module for hippo-canvas
 Group:          Development/Python
-Requires:       %{name} = %{version}-%{release}
+Requires:       %{libname} = %{version}-%{release}
 BuildRequires:  pygtk2.0-devel
 BuildRequires:  gtk-doc
 
