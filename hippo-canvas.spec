@@ -6,13 +6,14 @@
 
 Name:           %name
 Version:        0.3.0
-Release:        %mkrel 4
+Release:        %mkrel 5
 Summary:        A canvas widget
 
 Group:          Graphical desktop/GNOME
 License:        LGPLv2
 URL:            http://developer.mugshot.org/wiki/Hippo_Canvas
 Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/hippo-canvas/hippo-canvas-%{version}.tar.bz2
+Patch0:		hippo-canvas-0.3.0-linkage.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:  gtk2-devel
 BuildRequires:  librsvg-devel
@@ -53,6 +54,7 @@ The hippo-canvas-python package contains a Python interface.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x --disable-static
