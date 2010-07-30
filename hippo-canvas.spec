@@ -5,8 +5,8 @@
 %define develname %mklibname -d %name
 
 Name:           %name
-Version:        0.3.0
-Release:        %mkrel 6
+Version:        0.3.1
+Release:        %mkrel 1
 Summary:        A canvas widget
 
 Group:          Graphical desktop/GNOME
@@ -17,6 +17,7 @@ Patch0:		hippo-canvas-0.3.0-linkage.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires:  gtk2-devel
 BuildRequires:  librsvg-devel
+BuildRequires:  gobject-introspection-devel
 
 %description
 The hippo-canvas library contains a canvas widget developed by the 
@@ -47,6 +48,7 @@ Summary:        Python module for hippo-canvas
 Group:          Development/Python
 Requires:       %{libname} = %{version}-%{release}
 BuildRequires:  pygtk2.0-devel
+BuildRequires:  python-gobject-devel > 2.21.2
 BuildRequires:  gtk-doc
 
 %description -n python-%name
@@ -63,19 +65,16 @@ The hippo-canvas-python package contains a Python interface.
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
+mv %buildroot%_datadir/gir %buildroot%_datadir/gir-1.0
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
-%if %mdvver < 200900
-%post  -n %libname -p /sbin/ldconfig
-%postun  -n %libname -p /sbin/ldconfig
-%endif
 
 %files -n %libname
 %defattr(-,root,root,-)
 %doc LICENSE README AUTHORS
 %{_libdir}/libhippocanvas-%api.so.%{major}*
+%_libdir/girepository-1.0/Hippo-1.0.typelib
 
 %files -n %develname
 %defattr(-,root,root,-)
@@ -84,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/pkgconfig/hippo-canvas-1.pc
 %{_libdir}/*.so
 %{_libdir}/*.la
-
+%_datadir/gir-1.0/Hippo-1.0.gir
 %files -n python-%name
 %defattr(-,root,root,-)
 %{python_sitearch}/*.so
