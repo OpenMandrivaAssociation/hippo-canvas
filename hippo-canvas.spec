@@ -6,7 +6,7 @@
 
 Name:           %name
 Version:        0.3.1
-Release:        %mkrel 3
+Release:        %mkrel 4
 Summary:        A canvas widget
 
 Group:          Graphical desktop/GNOME
