@@ -1,0 +1,22 @@
+--- Makefile-python.am~	2008-05-22 00:50:31.000000000 +0200
++++ Makefile-python.am	2009-01-04 05:52:01.000000000 +0100
+@@ -14,7 +14,7 @@
+ pyhippo_LTLIBRARIES=hippo.la
+ 
+ hippo_la_LDFLAGS = -module -avoid-version
+-hippo_la_LIBADD =					\
++hippo_la_LIBADD = -lpython$(PYTHON_VERSION)		\
+ 	$(PYTHON_BINDINGS_LIBS)				\
+ 	$(LIBHIPPOCANVAS_LIBS)				\
+ 	$(top_builddir)/libhippocanvas-1.la
+--- Makefile.in~	2008-07-06 18:14:35.000000000 +0200
++++ Makefile.in	2009-01-04 05:54:03.000000000 +0100
+@@ -437,7 +437,7 @@
+ @HAVE_PYTHON_TRUE@pyhippodir = $(pyexecdir)
+ @HAVE_PYTHON_TRUE@pyhippo_LTLIBRARIES = hippo.la
+ @HAVE_PYTHON_TRUE@hippo_la_LDFLAGS = -module -avoid-version
+-@HAVE_PYTHON_TRUE@hippo_la_LIBADD = \
++@HAVE_PYTHON_TRUE@hippo_la_LIBADD = -lpython$(PYTHON_VERSION)		\
+ @HAVE_PYTHON_TRUE@	$(PYTHON_BINDINGS_LIBS)				\
+ @HAVE_PYTHON_TRUE@	$(LIBHIPPOCANVAS_LIBS)				\
+ @HAVE_PYTHON_TRUE@	$(top_builddir)/libhippocanvas-1.la
