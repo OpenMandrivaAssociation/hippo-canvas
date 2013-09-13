@@ -14,10 +14,10 @@ License:        LGPLv2
 URL:            http://developer.mugshot.org/wiki/Hippo_Canvas
 Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/hippo-canvas/hippo-canvas-%{version}.tar.bz2
 Patch0:		hippo-canvas-0.3.0-linkage.patch
-BuildRequires:  gtk2-devel
+BuildRequires:  gtk+2.0-devel
 BuildRequires:  librsvg-devel
 BuildRequires:  gobject-introspection-devel
-BuildRequires:  python-cairo-devel
+BuildRequires:  pkgconfig(pycairo)
 
 %description
 The hippo-canvas library contains a canvas widget developed by the 
