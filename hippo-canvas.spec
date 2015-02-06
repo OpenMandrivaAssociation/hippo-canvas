@@ -6,7 +6,7 @@
 
 Name:           %name
 Version:        0.3.1
-Release:        5
+Release:        6
 Summary:        A canvas widget
 
 Group:          Graphical desktop/GNOME
