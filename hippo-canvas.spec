@@ -61,6 +61,7 @@ The hippo-canvas-python package contains a Python interface.
 
 %build
 export LDFLAGS="-lgmodule-2.0"
+export PYTHON=python2
 %configure2_5x --disable-static
 %make
 
