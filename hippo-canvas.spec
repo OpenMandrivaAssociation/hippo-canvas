@@ -6,13 +6,13 @@
 
 Name:           %name
 Version:        0.3.1
-Release:        6
+Release:        7
 Summary:        A canvas widget
 
 Group:          Graphical desktop/GNOME
 License:        LGPLv2
 URL:            http://developer.mugshot.org/wiki/Hippo_Canvas
-Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/hippo-canvas/hippo-canvas-%{version}.tar.bz2
+Source0:        http://download.gnome.org/sources/hippo-canvas/hippo-canvas-%{version}.tar.bz2
 Patch0:		hippo-canvas-0.3.0-linkage.patch
 BuildRequires:  gtk+2.0-devel
 BuildRequires:  librsvg-devel
@@ -43,15 +43,15 @@ Provides:	%name-devel = %version-%release
 The hippo-canvas-devel package contains libraries and header files for
 developing applications that use hippo-canvas.
 
-%package -n     python-%name
+%package -n     python2-%name
 Summary:        Python module for hippo-canvas
 Group:          Development/Python
 Requires:       %{libname} = %{version}-%{release}
 BuildRequires:  pygtk2.0-devel
-BuildRequires:  python-gobject-devel > 2.21.2
+BuildRequires:  python2-gobject-devel > 2.21.2
 BuildRequires:  gtk-doc
 
-%description -n python-%name
+%description -n python2-%name
 The hippo-canvas-python package contains a Python interface.
 
 %prep
@@ -82,7 +82,7 @@ mv %buildroot%_datadir/gir %buildroot%_datadir/gir-1.0
 %{_libdir}/*.so
 %_datadir/gir-1.0/Hippo-1.0.gir
 
-%files -n python-%name
+%files -n python2-%name
 %defattr(-,root,root,-)
 %{python_sitearch}/*.so
 
