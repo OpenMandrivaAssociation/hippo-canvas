@@ -47,6 +47,7 @@ developing applications that use hippo-canvas.
 Summary:        Python module for hippo-canvas
 Group:          Development/Python
 Requires:       %{libname} = %{version}-%{release}
+%rename		python-%name
 BuildRequires:  pygtk2.0-devel
 BuildRequires:  python2-gobject-devel > 2.21.2
 BuildRequires:  gtk-doc
@@ -69,13 +70,11 @@ mv %buildroot%_datadir/gir %buildroot%_datadir/gir-1.0
 
 
 %files -n %libname
-%defattr(-,root,root,-)
 %doc LICENSE README AUTHORS
 %{_libdir}/libhippocanvas-%api.so.%{major}*
 %_libdir/girepository-1.0/Hippo-1.0.typelib
 
 %files -n %develname
-%defattr(-,root,root,-)
 %{_datadir}/gtk-doc/html/*
 %{_includedir}/*
 %{_libdir}/pkgconfig/hippo-canvas-1.pc
@@ -83,8 +82,7 @@ mv %buildroot%_datadir/gir %buildroot%_datadir/gir-1.0
 %_datadir/gir-1.0/Hippo-1.0.gir
 
 %files -n python2-%name
-%defattr(-,root,root,-)
-%{python_sitearch}/*.so
+%{python2_sitearch}/*.so
 
 
 
