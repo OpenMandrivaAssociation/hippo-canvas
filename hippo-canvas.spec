@@ -11,7 +11,7 @@ Summary:        A canvas widget
 
 Group:          Graphical desktop/GNOME
 License:        LGPLv2
-URL:            http://developer.mugshot.org/wiki/Hippo_Canvas
+URL:            https://developer.mugshot.org/wiki/Hippo_Canvas
 Source0:        http://download.gnome.org/sources/hippo-canvas/hippo-canvas-%{version}.tar.bz2
 Patch0:		hippo-canvas-0.3.0-linkage.patch
 BuildRequires:  gtk+2.0-devel
