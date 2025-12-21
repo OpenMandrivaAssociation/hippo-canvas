@@ -14,6 +14,11 @@ License:        LGPLv2
 URL:            https://developer.mugshot.org/wiki/Hippo_Canvas
 Source0:        http://download.gnome.org/sources/hippo-canvas/hippo-canvas-%{version}.tar.bz2
 Patch0:		hippo-canvas-0.3.0-linkage.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:  gtk+2.0-devel
 BuildRequires:  librsvg-devel
 BuildRequires:  gobject-introspection-devel
